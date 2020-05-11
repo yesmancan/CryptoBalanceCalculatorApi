@@ -34,7 +34,7 @@ namespace CryptoBalanceCalculatorApi
             //               opt.UseInMemoryDatabase("CryptoDb"));
 
             services.AddDbContext<CryptoContext>(options =>
-                        options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
+                        options.UseSqlServer(Configuration.GetConnectionString("DataContext")));
 
             services.AddControllers();
             services.AddCors();

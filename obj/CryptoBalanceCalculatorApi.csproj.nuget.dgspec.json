@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kadir\\Desktop\\CryptoBalanceCalculatorApi\\CryptoBalanceCalculatorApi.csproj": {}
+    "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoBalanceCalculatorApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kadir\\Desktop\\CryptoBalanceCalculatorApi\\CryptoBalanceCalculatorApi.csproj": {
+    "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoBalanceCalculatorApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kadir\\Desktop\\CryptoBalanceCalculatorApi\\CryptoBalanceCalculatorApi.csproj",
+        "projectUniqueName": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoBalanceCalculatorApi.csproj",
         "projectName": "CryptoBalanceCalculatorApi",
-        "projectPath": "C:\\Users\\kadir\\Desktop\\CryptoBalanceCalculatorApi\\CryptoBalanceCalculatorApi.csproj",
-        "packagesPath": "C:\\Users\\kadir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kadir\\Desktop\\CryptoBalanceCalculatorApi\\obj\\",
+        "projectPath": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoBalanceCalculatorApi.csproj",
+        "packagesPath": "C:\\Users\\yesma\\.nuget\\packages\\",
+        "outputPath": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\kadir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\yesma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -82,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

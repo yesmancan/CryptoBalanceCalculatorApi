@@ -10,6 +10,8 @@ namespace CryptoBalanceCalculatorApi.Models
         {
             using (var context = new CryptoContext(serviceProvider.GetRequiredService<DbContextOptions<CryptoContext>>()))
             {
+                context.Database.EnsureCreated();
+
                 // Look for any movies.
                 if (await context.CryptoHistoryItems.AnyAsync())
                 {
