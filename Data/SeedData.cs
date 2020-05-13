@@ -1,11 +1,12 @@
 using System;
 using CryptoBalanceCalculatorApi.Commons;
+using CryptoBalanceCalculatorApi.Data.Entities;
 using CryptoBalanceCalculatorApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 
-namespace CryptoBalanceCalculatorApi.Data.Entities
+namespace CryptoBalanceCalculatorApi.Data
 {
     public static class SeedData
     {

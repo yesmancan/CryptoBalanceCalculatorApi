@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using CryptoBalanceCalculatorApi.Data;
+using CryptoBalanceCalculatorApi.Services;
 
 namespace CryptoBalanceCalculatorApi
 {
@@ -29,6 +30,9 @@ namespace CryptoBalanceCalculatorApi
 
             services.AddControllers();
             services.AddCors();
+
+            services.AddScoped<CryptoServices, CryptoServices>();
+            services.AddScoped<CurrencyServices, CurrencyServices>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>

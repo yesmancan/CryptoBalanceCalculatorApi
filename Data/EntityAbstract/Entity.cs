@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CryptoBalanceCalculatorApi.Data.Entities
+namespace CryptoBalanceCalculatorApi.Data.EntityAbstract
 {
     public abstract class Entity
     {

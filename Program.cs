@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using CryptoBalanceCalculatorApi.Data.Entities;
+using CryptoBalanceCalculatorApi.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

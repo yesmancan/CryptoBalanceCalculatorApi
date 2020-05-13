@@ -1,3 +1,5 @@
+using CryptoBalanceCalculatorApi.Data.EntityAbstract;
+
 namespace CryptoBalanceCalculatorApi.Data.Entities
 {
     public class Currency : Entity
