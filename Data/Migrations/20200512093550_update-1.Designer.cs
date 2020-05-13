@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace CryptoBalanceCalculatorApi.Migrations
+namespace CryptoBalanceCalculatorApi.Data.Migrations
 {
     [DbContext(typeof(CryptoContext))]
-    [Migration("20200511214712_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20200512093550_update-1")]
+    partial class update1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace CryptoBalanceCalculatorApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CryptoBalanceCalculatorApi.Models.CryptoHistoryItem", b =>
+            modelBuilder.Entity("CryptoBalanceCalculatorApi.Data.Entities.CryptoHistoryItem", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,6 +52,9 @@ namespace CryptoBalanceCalculatorApi.Migrations
                     b.Property<string>("PaymentType")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Rates")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -60,30 +63,7 @@ namespace CryptoBalanceCalculatorApi.Migrations
                     b.ToTable("CryptoHistoryItem");
                 });
 
-            modelBuilder.Entity("CryptoBalanceCalculatorApi.Models.Rate", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<long?>("CryptoHistoryItemId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("price")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CryptoHistoryItemId");
-
-                    b.ToTable("Rate");
-                });
-
-            modelBuilder.Entity("CryptoBalanceCalculatorApi.Models.TodoItem", b =>
+            modelBuilder.Entity("CryptoBalanceCalculatorApi.Data.Entities.TodoItem", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,13 +82,6 @@ namespace CryptoBalanceCalculatorApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TodoItem");
-                });
-
-            modelBuilder.Entity("CryptoBalanceCalculatorApi.Models.Rate", b =>
-                {
-                    b.HasOne("CryptoBalanceCalculatorApi.Models.CryptoHistoryItem", null)
-                        .WithMany("Rates")
-                        .HasForeignKey("CryptoHistoryItemId");
                 });
 #pragma warning restore 612, 618
         }

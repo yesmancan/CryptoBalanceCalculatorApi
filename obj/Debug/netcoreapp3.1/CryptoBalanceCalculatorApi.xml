@@ -4,7 +4,7 @@
         <name>CryptoBalanceCalculatorApi</name>
     </assembly>
     <members>
-        <member name="M:CryptoBalanceCalculatorApi.Controllers.CryptoController.CreateItem(CryptoBalanceCalculatorApi.Models.CryptoHistoryItem)">
+        <member name="M:CryptoBalanceCalculatorApi.Controllers.CryptoController.CreateItem(CryptoBalanceCalculatorApi.Data.Entities.CryptoHistoryItem)">
              <summary>
              Creates a TodoItem.
              </summary>
@@ -30,7 +30,7 @@
             </summary>
             <param name="id"></param>  
         </member>
-        <member name="M:CryptoBalanceCalculatorApi.Controllers.TodoItemsController.CreateTodoItem(CryptoBalanceCalculatorApi.Models.DTO.TodoItemDTO)">
+        <member name="M:CryptoBalanceCalculatorApi.Controllers.TodoItemsController.CreateTodoItem(CryptoBalanceCalculatorApi.Models.TodoItemDTO)">
              <summary>
              Creates a TodoItem.
              </summary>

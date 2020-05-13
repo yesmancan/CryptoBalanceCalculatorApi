@@ -1,6 +1,6 @@
 using System;
 
-namespace CryptoBalanceCalculatorApi
+namespace CryptoBalanceCalculatorApi.Models
 {
     public class WeatherForecast
     {

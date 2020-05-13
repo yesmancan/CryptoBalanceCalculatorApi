@@ -6,7 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CryptoBalanceCalculatorApi.Models;
-using CryptoBalanceCalculatorApi.Models.DTO;
+using Newtonsoft.Json;
+using System.Net;
+using CryptoBalanceCalculatorApi.Data;
+using CryptoBalanceCalculatorApi.Data.Entities;
+using CryptoBalanceCalculatorApi.Commons;
 
 namespace CryptoBalanceCalculatorApi.Controllers
 {
@@ -31,7 +35,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
         public async Task<ActionResult<CryptoHistoryItem>> GetItems(long id)
         {
             var item = await _context.CryptoHistoryItems.FindAsync(id);
-
+            item.Rates = WebUtility.UrlDecode(item.Rates);
             if (item == null)
             {
                 return NotFound();
@@ -61,12 +65,12 @@ namespace CryptoBalanceCalculatorApi.Controllers
             _item.Amount = item.Amount;
             _item.CoinName = item.CoinName;
             _item.Company = item.Company;
-            _item.CreateBy = item.CreateBy;
-            _item.CreateDt = item.CreateDt;
+            _item.UpdatedBy = "HASH";
+            _item.UpdateDt = item.UpdateDt;
             _item.Order = item.Order;
             _item.PaymentType = item.PaymentType;
             _item.Rates = item.Rates;
-            _item.Status = item.Status;
+            _item.Status = (int)Enums.EntityStatus.Confirm;
 
             try
             {
@@ -112,8 +116,8 @@ namespace CryptoBalanceCalculatorApi.Controllers
                 Rates = item.Rates,
                 Amount = item.Amount,
                 PaymentType = item.PaymentType,
-                Status = item.Status,
-                CreateBy = 1,
+                Status = (int)Enums.EntityStatus.Confirm,
+                CreatedBy = "HASH",
                 CreateDt = DateTime.Now
             };
 

@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CryptoBalanceCalculatorApi.Models;
-using CryptoBalanceCalculatorApi.Models.DTO;
+using CryptoBalanceCalculatorApi.Data;
+using CryptoBalanceCalculatorApi.Data.Entities;
 
 namespace CryptoBalanceCalculatorApi.Controllers
 {
