@@ -4,23 +4,21 @@
         <name>CryptoBalanceCalculatorApi</name>
     </assembly>
     <members>
-        <member name="M:CryptoBalanceCalculatorApi.Controllers.CryptoController.CreateItem(CryptoBalanceCalculatorApi.Models.CryptoHistoryItem)">
+        <member name="M:CryptoBalanceCalculatorApi.Controllers.CryptoController.CreateItem(CryptoBalanceCalculatorApi.Data.Entities.CryptoHistoryItem)">
              <summary>
-             Creates a TodoItem.
+             Creates a CryptoHistoryItem.
              </summary>
              <remarks>
              Sample request:
             
-                 POST /Todo
+                 POST /CreateItem
                  {
-                    "id": 1,
-                    "name": "Item1",
-                    "isComplete": true
+                   
                  }
             
              </remarks>
              <param name="item"></param>
-             <returns>A newly created TodoItem</returns>
+             <returns>A newly created CryptoHistoryItem</returns>
              <response code="201">Returns the newly created item</response>
              <response code="400">If the item is null</response>            
         </member>
@@ -30,27 +28,25 @@
             </summary>
             <param name="id"></param>  
         </member>
-        <member name="M:CryptoBalanceCalculatorApi.Controllers.TodoItemsController.CreateTodoItem(CryptoBalanceCalculatorApi.Models.DTO.TodoItemDTO)">
+        <member name="M:CryptoBalanceCalculatorApi.Controllers.CurrencyControllers.CreateItem(CryptoBalanceCalculatorApi.Data.Entities.Currency)">
              <summary>
-             Creates a TodoItem.
+             Creates a Currency.
              </summary>
              <remarks>
              Sample request:
             
-                 POST /Todo
+                 POST /CreateItem
                  {
-                    "id": 1,
-                    "name": "Item1",
-                    "isComplete": true
+                   
                  }
             
              </remarks>
              <param name="item"></param>
-             <returns>A newly created TodoItem</returns>
+             <returns>A newly created Currency</returns>
              <response code="201">Returns the newly created item</response>
              <response code="400">If the item is null</response>            
         </member>
-        <member name="M:CryptoBalanceCalculatorApi.Controllers.TodoItemsController.DeleteTodoItem(System.Int64)">
+        <member name="M:CryptoBalanceCalculatorApi.Controllers.CurrencyControllers.DeleteTodoItem(System.Int64)">
             <summary>
             Deletes a specific TodoItem.
             </summary>

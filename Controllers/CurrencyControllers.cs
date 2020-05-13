@@ -15,27 +15,27 @@ using CryptoBalanceCalculatorApi.Services;
 
 namespace CryptoBalanceCalculatorApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/currency")]
     [ApiController]
-    public class CryptoController : ControllerBase
+    public class CurrencyControllers : ControllerBase
     {
         #region Constructor
-        private readonly CryptoServices _cryptoServices;
+        private readonly CurrencyServices _currencyServices;
 
-        public CryptoController(CryptoServices cryptoServices)
+        public CurrencyControllers(CurrencyServices currencyServices)
         {
-            _cryptoServices = cryptoServices;
+            _currencyServices = currencyServices;
         }
         #endregion
 
         [HttpGet]
-        public async Task<ApiResultModel<IEnumerable<CryptoHistoryItem>>> Get()
+        public async Task<ApiResultModel<IEnumerable<Currency>>> Get()
         {
             try
             {
-                IEnumerable<CryptoHistoryItem> data = await _cryptoServices.Get();
+                IEnumerable<Currency> data = await _currencyServices.Get();
 
-                return new ApiResultModel<IEnumerable<CryptoHistoryItem>>()
+                return new ApiResultModel<IEnumerable<Currency>>()
                 {
                     Succeed = true,
                     Message = "Succeed",
@@ -44,7 +44,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
             }
             catch (System.Exception ex)
             {
-                return new ApiResultModel<IEnumerable<CryptoHistoryItem>>()
+                return new ApiResultModel<IEnumerable<Currency>>()
                 {
                     Succeed = false,
                     Message = ex.Message,
@@ -54,14 +54,14 @@ namespace CryptoBalanceCalculatorApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ApiResultModel<CryptoHistoryItem>> GetItems(long id)
+        public async Task<ApiResultModel<Currency>> GetItems(long id)
         {
             try
             {
-                CryptoHistoryItem item = await _cryptoServices.Get(id);
+                Currency item = await _currencyServices.Get(id);
                 if (item == null)
                 {
-                    return new ApiResultModel<CryptoHistoryItem>()
+                    return new ApiResultModel<Currency>()
                     {
                         Succeed = true,
                         Message = "Empty",
@@ -69,7 +69,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
                     };
                 }
 
-                return new ApiResultModel<CryptoHistoryItem>()
+                return new ApiResultModel<Currency>()
                 {
                     Succeed = true,
                     Message = "Succeed",
@@ -78,7 +78,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
             }
             catch (System.Exception ex)
             {
-                return new ApiResultModel<CryptoHistoryItem>()
+                return new ApiResultModel<Currency>()
                 {
                     Succeed = false,
                     Message = ex.Message,
@@ -88,11 +88,11 @@ namespace CryptoBalanceCalculatorApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ApiResultModel<CryptoHistoryItem>> UpdateItem(long id, CryptoHistoryItem item)
+        public async Task<ApiResultModel<Currency>> UpdateItem(long id, Currency item)
         {
             if (id != item.Id)
             {
-                return new ApiResultModel<CryptoHistoryItem>()
+                return new ApiResultModel<Currency>()
                 {
                     Message = "Id not equal item id",
                     Succeed = false,
@@ -101,8 +101,8 @@ namespace CryptoBalanceCalculatorApi.Controllers
             }
             try
             {
-                await _cryptoServices.Update(id, item);
-                return new ApiResultModel<CryptoHistoryItem>()
+                await _currencyServices.Update(id, item);
+                return new ApiResultModel<Currency>()
                 {
                     Message = "Succeed",
                     Succeed = true,
@@ -111,7 +111,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
             }
             catch (System.Exception ex)
             {
-                return new ApiResultModel<CryptoHistoryItem>()
+                return new ApiResultModel<Currency>()
                 {
                     Message = ex.Message,
                     Succeed = false,
@@ -121,7 +121,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
         }
 
         /// <summary>
-        /// Creates a CryptoHistoryItem.
+        /// Creates a Currency.
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -133,18 +133,18 @@ namespace CryptoBalanceCalculatorApi.Controllers
         ///
         /// </remarks>
         /// <param name="item"></param>
-        /// <returns>A newly created CryptoHistoryItem</returns>
+        /// <returns>A newly created Currency</returns>
         /// <response code="201">Returns the newly created item</response>
         /// <response code="400">If the item is null</response>            
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ApiResultModel<CryptoHistoryItem>> CreateItem(CryptoHistoryItem item)
+        public async Task<ApiResultModel<Currency>> CreateItem(Currency item)
         {
             try
             {
-                CryptoHistoryItem _item = await _cryptoServices.Create(item);
-                return new ApiResultModel<CryptoHistoryItem>()
+                Currency _item = await _currencyServices.Create(item);
+                return new ApiResultModel<Currency>()
                 {
                     Message = "Succeed",
                     Succeed = true,
@@ -154,7 +154,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
             }
             catch (System.Exception ex)
             {
-                return new ApiResultModel<CryptoHistoryItem>()
+                return new ApiResultModel<Currency>()
                 {
                     Message = ex.Message,
                     Succeed = false,
@@ -168,12 +168,12 @@ namespace CryptoBalanceCalculatorApi.Controllers
         /// </summary>
         /// <param name="id"></param>  
         [HttpDelete("{id}")]
-        public async Task<ApiResultModel<CryptoHistoryItem>> DeleteTodoItem(long id)
+        public async Task<ApiResultModel<Currency>> DeleteTodoItem(long id)
         {
             try
             {
-                CryptoHistoryItem item = await _cryptoServices.Delete(id);
-                return new ApiResultModel<CryptoHistoryItem>()
+                Currency item = await _currencyServices.Delete(id);
+                return new ApiResultModel<Currency>()
                 {
                     Message = "Succeed",
                     Succeed = true,
@@ -182,7 +182,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
             }
             catch (System.Exception ex)
             {
-                return new ApiResultModel<CryptoHistoryItem>()
+                return new ApiResultModel<Currency>()
                 {
                     Message = ex.Message,
                     Succeed = false,

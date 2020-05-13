@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CryptoBalanceCalculatorApi.Migrations
+namespace CryptoBalanceCalculatorApi.Data.Migrations
 {
     public partial class MyFirstMigration : Migration
     {
