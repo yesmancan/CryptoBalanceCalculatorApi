@@ -16,7 +16,7 @@ namespace CryptoBalanceCalculatorApi.Data
             {
                 context.Database.EnsureCreated();
 
-                // Look for any movies.
+                // Look for any Currencies.
                 if (await context.Currencies.AnyAsync())
                 {
                     return;   // DB has been seeded
@@ -39,7 +39,9 @@ namespace CryptoBalanceCalculatorApi.Data
                    CreateDt = DateTime.Now,
                    Status = (int)Enums.EntityStatus.Confirm
                });
-                // Look for any movies.
+                context.SaveChanges();
+
+                // Look for any CryptoHistoryItems.
                 if (await context.CryptoHistoryItems.AnyAsync())
                 {
                     return;   // DB has been seeded

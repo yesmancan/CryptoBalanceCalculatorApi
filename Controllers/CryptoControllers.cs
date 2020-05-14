@@ -168,7 +168,7 @@ namespace CryptoBalanceCalculatorApi.Controllers
         /// </summary>
         /// <param name="id"></param>  
         [HttpDelete("{id}")]
-        public async Task<ApiResultModel<CryptoHistoryItem>> DeleteTodoItem(long id)
+        public async Task<ApiResultModel<CryptoHistoryItem>> DeleteItem(long id)
         {
             try
             {

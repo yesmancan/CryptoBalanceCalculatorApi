@@ -1,10 +1,24 @@
-const uri = 'api/TodoItems';
-let todos = [];
+const uriCrypto = 'api/Crypto';
+const uriCurrency = 'api/Currency';
 
-function getItems() {
-    fetch(uri)
+let cryptoHistories = [];
+
+async function getItems() {
+    const curr = document.getElementById('add-currency');
+
+    const currArr = await fetch(uriCurrency)
         .then(response => response.json())
-        .then(data => _displayItems(data))
+        .then(data => data)
+        .catch(error => console.error('Unable to get items.', error));
+    console.log(currArr);
+
+    currArr.data.forEach(x => {
+        curr.insertAdjacentHTML('beforeend', `<option value="${x.id}">${x.longName} (${x.shortName})</option>`);
+    })
+
+    fetch(uriCrypto)
+        .then(response => response.json())
+        .then(data => console.log(data))
         .catch(error => console.error('Unable to get items.', error));
 }
 
