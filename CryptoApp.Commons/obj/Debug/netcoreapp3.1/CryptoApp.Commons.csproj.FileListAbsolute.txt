@@ -1,0 +1,9 @@
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\bin\Debug\netcoreapp3.1\CryptoApp.Commons.deps.json
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\bin\Debug\netcoreapp3.1\CryptoApp.Commons.dll
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\obj\Debug\netcoreapp3.1\CryptoApp.Commons.AssemblyInfoInputs.cache
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\obj\Debug\netcoreapp3.1\CryptoApp.Commons.AssemblyInfo.cs
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\bin\Debug\netcoreapp3.1\CryptoApp.Commons.pdb
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\obj\Debug\netcoreapp3.1\CryptoApp.Commons.csproj.CoreCompileInputs.cache
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\obj\Debug\netcoreapp3.1\CryptoApp.Commons.dll
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\obj\Debug\netcoreapp3.1\CryptoApp.Commons.pdb
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Commons\obj\Debug\netcoreapp3.1\CryptoApp.Commons.csprojAssemblyReference.cache

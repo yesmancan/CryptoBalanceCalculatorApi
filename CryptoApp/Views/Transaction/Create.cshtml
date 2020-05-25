@@ -1,0 +1,92 @@
+﻿@model CryptoApp.Data.Entities.Transaction
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Transaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Market" class="control-label"></label>
+                <select asp-for="Market" asp-items="@(new SelectList(ViewBag.Markets,"Id","Name"))" class="form-control"></select>
+                <span asp-validation-for="Market" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coin" class="control-label"></label>
+                <select asp-for="Coin" asp-items="@(new SelectList(ViewBag.Coins,"Id","Normalized"))" class="form-control"></select>
+                <span asp-validation-for="Coin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuyingPrice" class="control-label"></label>
+                <input asp-for="BuyingPrice" class="form-control" asp-format="{0:#,###.00}"/>
+                <span asp-validation-for="BuyingPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsSold" class="control-label"></label>
+                <input asp-for="IsSold" class="form-control" type="checkbox" />
+                <span asp-validation-for="IsSold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SellPrice" class="control-label"></label>
+                <input asp-for="SellPrice" class="form-control" />
+                <span asp-validation-for="SellPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit" class="control-label"></label>
+                <input asp-for="Unit" class="form-control" />
+                <span asp-validation-for="Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $(".set-decimal-number").trigger("change");
+        });
+        $(".set-decimal-number").on('change', function (e) {
+
+            var number = $(this).val();
+            var inputId = $(this).attr('id');
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Home/SetDecimalNumber",
+                contentType: "application/json",
+                data: JSON.stringify(number),
+                success: function (data) {
+                    setNumberInput(inputId, data);
+                }
+            });
+        });
+        function setNumberInput(id, value) {
+            document.getElementById(id).value = value;
+            if (value == "") {
+                document.getElementById(id).focus();
+            }
+            //console.log(id + " " + value);
+        }
+    </script>
+
+    <script>
+        $.validator.methods.number = function (value, element) {
+            return this.optional(element) || /-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+        };
+    </script>
+}

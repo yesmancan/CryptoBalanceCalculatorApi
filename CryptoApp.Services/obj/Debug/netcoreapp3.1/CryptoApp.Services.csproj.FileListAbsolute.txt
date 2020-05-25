@@ -1,0 +1,16 @@
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Services.deps.json
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Services.dll
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\obj\Debug\netcoreapp3.1\CryptoApp.Services.csprojAssemblyReference.cache
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\obj\Debug\netcoreapp3.1\CryptoApp.Services.AssemblyInfoInputs.cache
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\obj\Debug\netcoreapp3.1\CryptoApp.Services.AssemblyInfo.cs
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Services.pdb
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\obj\Debug\netcoreapp3.1\CryptoApp.Services.csproj.CoreCompileInputs.cache
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\obj\Debug\netcoreapp3.1\CryptoApp.Services.dll
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\obj\Debug\netcoreapp3.1\CryptoApp.Services.pdb
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Commons.dll
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Models.dll
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Commons.pdb
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Models.pdb
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\obj\Debug\netcoreapp3.1\CryptoApp.Services.csproj.CopyComplete
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Data.dll
+C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Services\bin\Debug\netcoreapp3.1\CryptoApp.Data.pdb

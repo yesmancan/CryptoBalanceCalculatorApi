@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.7.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoApp.Commons\CryptoApp.Commons.csproj" />
+    <ProjectReference Include="..\CryptoApp.Data\CryptoApp.Data.csproj" />
+    <ProjectReference Include="..\CryptoApp.Models\CryptoApp.Models.csproj" />
+  </ItemGroup>
+
+</Project>

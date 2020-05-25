@@ -1,0 +1,28 @@
+﻿@model CryptoApp.Models.DTO.UserTransactionOverview
+
+@{
+    ViewData["Title"] = "Calculate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Calculate</h1>
+
+<h2>New Price @Model.NewPrice</h2>
+<h2>Old Price @Model.OldPrice</h2>
+<h2>Balance @Model.Profit</h2>
+
+@foreach (var coin in Model.CoinByCoin)
+{
+<div>
+    <h3>@coin.Market.Name</h3>
+    <h3>@coin.Coin.Normalized</h3>
+
+    <h3>@coin.NewPrice</h3>
+    <h3>@coin.OldPrice</h3>
+    <h3>@coin.Profit</h3>
+    <h3>@coin.ProfitRatio</h3>
+
+</div>
+}
+
+

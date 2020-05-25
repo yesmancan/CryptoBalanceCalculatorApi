@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoApp", "CryptoApp\CryptoApp.csproj", "{D4076560-D6E4-45A0-BC2D-C35DBF5173E6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoApp.Services", "CryptoApp.Services\CryptoApp.Services.csproj", "{1D49DBBD-AD65-4AAA-A4E3-1825DA798581}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoApp.Models", "CryptoApp.Models\CryptoApp.Models.csproj", "{243AE109-6FDC-432A-BA48-C5D6855E0B7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoApp.Commons", "CryptoApp.Commons\CryptoApp.Commons.csproj", "{8297E28E-A25D-4630-8722-D1A49B18D1FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoApp.Data", "CryptoApp.Data\CryptoApp.Data.csproj", "{AA3D369C-69C9-468C-8EFA-1874BEB34A33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4076560-D6E4-45A0-BC2D-C35DBF5173E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4076560-D6E4-45A0-BC2D-C35DBF5173E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4076560-D6E4-45A0-BC2D-C35DBF5173E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4076560-D6E4-45A0-BC2D-C35DBF5173E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D49DBBD-AD65-4AAA-A4E3-1825DA798581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D49DBBD-AD65-4AAA-A4E3-1825DA798581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D49DBBD-AD65-4AAA-A4E3-1825DA798581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D49DBBD-AD65-4AAA-A4E3-1825DA798581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{243AE109-6FDC-432A-BA48-C5D6855E0B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{243AE109-6FDC-432A-BA48-C5D6855E0B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{243AE109-6FDC-432A-BA48-C5D6855E0B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{243AE109-6FDC-432A-BA48-C5D6855E0B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8297E28E-A25D-4630-8722-D1A49B18D1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8297E28E-A25D-4630-8722-D1A49B18D1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8297E28E-A25D-4630-8722-D1A49B18D1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8297E28E-A25D-4630-8722-D1A49B18D1FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA3D369C-69C9-468C-8EFA-1874BEB34A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA3D369C-69C9-468C-8EFA-1874BEB34A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA3D369C-69C9-468C-8EFA-1874BEB34A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA3D369C-69C9-468C-8EFA-1874BEB34A33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03494368-7D53-463D-8D56-71D1C95F141F}
+	EndGlobalSection
+EndGlobal

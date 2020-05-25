@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CryptoApp.Data.Entities.Transaction>
+
+@{
+    ViewData["Title"] = "Get";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Get</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Market)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuyingPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsSold)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SellPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Market)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Coin)
+                </td>
+                <td>
+                   @item.Unit.ToString("#,##0.00000000")
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.BuyingPrice)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.IsSold)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.SellPrice)
+                </th>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
