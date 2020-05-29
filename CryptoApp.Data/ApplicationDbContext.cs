@@ -30,6 +30,13 @@ namespace CryptoApp.Data
                 entity.HasKey(x => x.Id);
 
                 entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("UniqueIdentifier")
+                    .HasDefaultValueSql("(newid())");
+
+                entity.HasKey(x => x.Id);
+
+                entity.Property(e => e.Id)
                 .ValueGeneratedNever();
 
                 entity.Property(e => e.Ask)

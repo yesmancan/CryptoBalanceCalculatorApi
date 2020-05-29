@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "Get";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var markets = (List<CryptoApp.Data.Entities.Companies>)ViewBag.Markets;
+    var pairs = (List<CryptoApp.Data.Entities.Pair>)ViewBag.Pairs;
+
 }
 
 <h1>Get</h1>
@@ -45,13 +49,13 @@
                     @Html.DisplayFor(modelItem => item.Id)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Market)
+                    @markets.FirstOrDefault(x=>x.Id == item.Market).Name
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Coin)
+                    @pairs.FirstOrDefault(x => x.Id == item.Coin).Normalized
                 </td>
                 <td>
-                   @item.Unit.ToString("#,##0.00000000")
+                    @item.Unit.ToString("#,##0.00000000")
                 </td>
                 <th>
                     @Html.DisplayFor(modelItem => item.BuyingPrice)
@@ -63,9 +67,10 @@
                     @Html.DisplayFor(modelItem => item.SellPrice)
                 </th>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+
+                    <form action="transaction/delete/@item.Id" method="post" asp-antiforgery="true">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
                 </td>
             </tr>
         }

@@ -38,7 +38,7 @@ namespace CryptoApp.Services
         #region Base Method
         public async Task<IEnumerable<Transaction>> GetByUserIdAsync(Guid userId)
         {
-            return await _retrieverRepository.GetAsync<Transaction>(x => x.UserId == userId);
+            return await _retrieverRepository.GetAsync<Transaction>(x => x.UserId == userId, x => x.OrderBy(z => z.CreateDt));
         }
         public async Task<Transaction> GetAsync(Guid id)
         {
@@ -105,10 +105,15 @@ namespace CryptoApp.Services
 
             foreach (Transaction transaction in transactions)
             {
-                Currency currency = await _retrieverRepository.GetFirstAsync<Currency>(x => x.Companies.Id == transaction.Market && x.Pairs.Id == transaction.Coin);
+                Currency currency = await _retrieverRepository.GetFirstAsync<Currency>(x => x.Companies == transaction.Market && x.Pairs == transaction.Coin);
+                if (currency == null)
+                    return new UserTransactionOverview();
 
+                if (transaction.IsSold)
+                    overview.NewPrice += transaction.SellPrice * transaction.Unit;
+                else
+                    overview.NewPrice += currency.Last * transaction.Unit;
 
-                overview.NewPrice += currency.Last * transaction.Unit;
                 overview.OldPrice += transaction.BuyingPrice * transaction.Unit;
 
                 overview.CoinByCoin.Add(new CoinByCoinOverview()
@@ -142,7 +147,7 @@ namespace CryptoApp.Services
         }
         public async Task<IEnumerable<Currency>> GetCoinsByMarket(Guid companyId)
         {
-            return await _retrieverRepository.GetAsync<Currency>(x => x.Companies.Id == companyId);
+            return await _retrieverRepository.GetAsync<Currency>(x => x.Companies == companyId);
         }
     }
 }

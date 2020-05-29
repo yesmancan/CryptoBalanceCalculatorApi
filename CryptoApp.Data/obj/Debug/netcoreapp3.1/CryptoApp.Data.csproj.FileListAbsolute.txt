@@ -10,3 +10,15 @@ C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Data\bin\Debug\netcoreapp3.1\Cry
 C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Data\bin\Debug\netcoreapp3.1\CryptoApp.Commons.pdb
 C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.csprojAssemblyReference.cache
 C:\Users\kadir\Source\Repos\CryptoApp\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.csproj.CopyComplete
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\bin\Debug\netcoreapp3.1\CryptoApp.Data.deps.json
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\bin\Debug\netcoreapp3.1\CryptoApp.Data.dll
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\bin\Debug\netcoreapp3.1\CryptoApp.Data.pdb
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\bin\Debug\netcoreapp3.1\CryptoApp.Commons.dll
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\bin\Debug\netcoreapp3.1\CryptoApp.Commons.pdb
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.csprojAssemblyReference.cache
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.csproj.CoreCompileInputs.cache
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.AssemblyInfoInputs.cache
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.AssemblyInfo.cs
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.csproj.CopyComplete
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.dll
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Data\obj\Debug\netcoreapp3.1\CryptoApp.Data.pdb

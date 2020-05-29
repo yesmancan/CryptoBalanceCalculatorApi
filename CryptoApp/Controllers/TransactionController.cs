@@ -5,6 +5,7 @@ using CryptoApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CryptoApp.Controllers
@@ -22,12 +23,15 @@ namespace CryptoApp.Controllers
         }
         #endregion
 
+        [Route("transactions")]
         public async Task<IActionResult> Get()
         {
             try
             {
-                IEnumerable<Transaction> data = await _transactionServices.GetByUserIdAsync(User.GetLoggedInUserId<Guid>());
 
+                IEnumerable<Transaction> data = await _transactionServices.GetByUserIdAsync(User.GetLoggedInUserId<Guid>());
+                ViewBag.Pairs = await _pairServices.GetPairsAsync();
+                ViewBag.Markets = await _transactionServices.GetMarkets();
                 return View(data);
             }
             catch (System.Exception ex)
@@ -35,6 +39,7 @@ namespace CryptoApp.Controllers
                 return View(ex);
             }
         }
+        [Route("transaction/create")]
         public async Task<IActionResult> Create()
         {
             ViewBag.Markets = await _transactionServices.GetMarkets();
@@ -46,6 +51,7 @@ namespace CryptoApp.Controllers
         // POST: Movies/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("transaction/create")]
         public async Task<IActionResult> Create([Bind("Market,Coin,Unit,BuyingPrice,IsSold,SellPrice")] Transaction transaction)
         {
             if (ModelState.IsValid)
@@ -57,10 +63,20 @@ namespace CryptoApp.Controllers
                 transaction.Status = (short)Enums.EntityStatus.Active;
 
                 await _transactionServices.Create(transaction);
-                return RedirectToAction("Index");
+                return Redirect("/transactions");
             }
             return View(transaction);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("transaction/delete/{id:Guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _transactionServices.Delete(id);
+            return Redirect("/transactions");
+        }
+        [Route("transaction/calculate")]
         public async Task<IActionResult> Calculate()
         {
             try
@@ -74,8 +90,5 @@ namespace CryptoApp.Controllers
                 return View(ex);
             }
         }
-
-
-
     }
 }

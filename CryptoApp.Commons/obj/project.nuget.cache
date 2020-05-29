@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TUAhtuBJ81j+Xst+ki9jEf2YUy+5uUwl4GcHTJ/JXOLRr8TkWdWEE/YyToGwAqO7zWbePhg31gYy6fiGA3ziyw==",
+  "dgSpecHash": "baRYhpjkkzUdKc+/DkmBuq2osxC3JFXl7Z08AFiCQAUgAKhZreU4Z23c4I/2Oieu8sMMmAxr69Enl8fqS8eLag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kadir\\Source\\Repos\\CryptoApp\\CryptoApp.Commons\\CryptoApp.Commons.csproj",
+  "projectFilePath": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoApp.Commons\\CryptoApp.Commons.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kadir\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\kadir\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\yesma\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

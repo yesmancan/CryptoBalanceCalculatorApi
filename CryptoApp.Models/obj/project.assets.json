@@ -5112,24 +5112,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kadir\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\yesma\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kadir\\Source\\Repos\\CryptoApp\\CryptoApp.Models\\CryptoApp.Models.csproj",
+      "projectUniqueName": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoApp.Models\\CryptoApp.Models.csproj",
       "projectName": "CryptoApp.Models",
-      "projectPath": "C:\\Users\\kadir\\Source\\Repos\\CryptoApp\\CryptoApp.Models\\CryptoApp.Models.csproj",
-      "packagesPath": "C:\\Users\\kadir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kadir\\Source\\Repos\\CryptoApp\\CryptoApp.Models\\obj\\",
+      "projectPath": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoApp.Models\\CryptoApp.Models.csproj",
+      "packagesPath": "C:\\Users\\yesma\\.nuget\\packages\\",
+      "outputPath": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoApp.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\kadir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\yesma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5141,8 +5142,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\kadir\\Source\\Repos\\CryptoApp\\CryptoApp.Data\\CryptoApp.Data.csproj": {
-              "projectPath": "C:\\Users\\kadir\\Source\\Repos\\CryptoApp\\CryptoApp.Data\\CryptoApp.Data.csproj"
+            "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoApp.Data\\CryptoApp.Data.csproj": {
+              "projectPath": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoApp.Data\\CryptoApp.Data.csproj"
             }
           }
         }
@@ -5165,18 +5166,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

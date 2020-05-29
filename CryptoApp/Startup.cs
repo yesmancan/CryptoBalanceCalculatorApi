@@ -55,6 +55,8 @@ namespace CryptoApp
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            services.AddMvc();
+
             services.AddCors();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -98,6 +100,10 @@ namespace CryptoApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }

@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 
 namespace CryptoApp.Data.Entities
 {
     public class Currency
     {
-        //public Currency()
-        //{
-        //    Companies = new Companies();
-        //    Pair = new Pair();
-        //}
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public virtual Companies Companies { get; set; }
-        public virtual Pair Pairs { get; set; }
+        public Guid Companies { get; set; }
+        public Guid Pairs { get; set; }
         public int Unit { get; set; }
         public string TimeStamp { get; set; }
         [Column(TypeName = "decimal(18,2)")]

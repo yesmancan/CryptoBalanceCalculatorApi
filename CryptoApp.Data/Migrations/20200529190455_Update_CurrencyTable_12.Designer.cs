@@ -4,14 +4,16 @@ using CryptoApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CryptoApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200529190455_Update_CurrencyTable_12")]
+    partial class Update_CurrencyTable_12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,8 +58,7 @@ namespace CryptoApp.Data.Migrations
             modelBuilder.Entity("CryptoApp.Data.Entities.Currency", b =>
                 {
                     b.Property<Guid>("Id")
-                        .HasColumnType("UniqueIdentifier")
-                        .HasDefaultValueSql("(newid())");
+                        .HasColumnType("UniqueIdentifier");
 
                     b.Property<decimal>("Ask")
                         .HasColumnType("decimal(18,2)");
@@ -68,7 +69,7 @@ namespace CryptoApp.Data.Migrations
                     b.Property<decimal>("Bid")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid>("Companies")
+                    b.Property<Guid?>("CompaniesId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Daily")
@@ -92,7 +93,7 @@ namespace CryptoApp.Data.Migrations
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("Pairs")
+                    b.Property<Guid?>("PairsId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("TimeStamp")
@@ -105,6 +106,10 @@ namespace CryptoApp.Data.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CompaniesId");
+
+                    b.HasIndex("PairsId");
 
                     b.ToTable("Currency","Application");
                 });
@@ -398,6 +403,17 @@ namespace CryptoApp.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("CryptoApp.Data.Entities.Currency", b =>
+                {
+                    b.HasOne("CryptoApp.Data.Entities.Companies", "Companies")
+                        .WithMany()
+                        .HasForeignKey("CompaniesId");
+
+                    b.HasOne("CryptoApp.Data.Entities.Pair", "Pairs")
+                        .WithMany()
+                        .HasForeignKey("PairsId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

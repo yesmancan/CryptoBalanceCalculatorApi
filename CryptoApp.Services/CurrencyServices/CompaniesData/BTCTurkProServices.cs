@@ -35,31 +35,44 @@ namespace CryptoApp.Services.CurrencyServices.CompaniesData
             if (result.Success && result.Data != null && result.Data.Count > 0)
             {
                 Companies companies = await _companiesServices.GetCompanyAsync(Enums.Companies.BtcTurk);
+                Guid companiesId = companies.Id;
                 List<Pair> pairs = await _pairServices.GetPairsAsync();
 
-                await _context.Database.ExecuteSqlRawAsync($"DELETE [Application].[Currency] WHERE CompaniesId = '{companies.Id}'");
-
-                List<Currency> curs = result.Data.Select(x => new Currency()
+                await _context.Database.ExecuteSqlRawAsync($"DELETE [Application].[Currency] WHERE Companies = '{companiesId}'");
+                List<Currency> curs = new List<Currency>();
+                foreach (BtcTurkCurrencyDTO x in result.Data)
                 {
-                    Id = Guid.NewGuid(),
-                    Companies = companies,
-                    Pairs = pairs.FirstOrDefault(p => p.Normalized == x.PairNormalized),
-                    Ask = x.Ask,
-                    Average = x.Average,
-                    Bid = x.Bid,
-                    Daily = x.Daily,
-                    DailyPercent = x.DailyPercent,
-                    High = x.High,
-                    Last = x.Last,
-                    Low = x.Low,
-                    Open = x.Open,
-                    Order = x.Order,
-                    TimeStamp = x.TimeStamp,
-                    Volume = x.Volume
-                }).ToList();
+                    Guid pairId = pairs.FirstOrDefault(p => p.Normalized == x.PairNormalized).Id;
+                    curs.Add(new Currency()
+                    {
+                        Id = Guid.NewGuid(),
+                        Companies = companiesId,
+                        Pairs = pairId,
+                        Ask = x.Ask,
+                        Average = x.Average,
+                        Bid = x.Bid,
+                        Daily = x.Daily,
+                        DailyPercent = x.DailyPercent,
+                        High = x.High,
+                        Last = x.Last,
+                        Low = x.Low,
+                        Open = x.Open,
+                        Order = x.Order,
+                        TimeStamp = x.TimeStamp,
+                        Volume = x.Volume
+                    });
+                }
 
-                await _context.Currencies.AddRangeAsync(curs);
-                await _context.SaveChangesAsync();
+
+                try
+                {
+                    await _context.Currencies.AddRangeAsync(curs);
+                    await _context.SaveChangesAsync();
+
+                }
+                catch (Exception ex)
+                {
+                }
             }
 
         }
