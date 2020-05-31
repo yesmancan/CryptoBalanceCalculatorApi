@@ -896,9 +896,6 @@ D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\Cry
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\CryptoApp.Commons.pdb
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\CryptoApp.Models.pdb
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.csprojAssemblyReference.cache
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.csproj.CoreCompileInputs.cache
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.MvcApplicationPartsAssemblyInfo.cs
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.MvcApplicationPartsAssemblyInfo.cache
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.RazorAssemblyInfo.cache
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.RazorAssemblyInfo.cs
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.AssemblyInfoInputs.cache
