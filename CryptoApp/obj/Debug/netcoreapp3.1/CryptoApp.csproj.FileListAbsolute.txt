@@ -963,3 +963,9 @@ D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\sta
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.dll
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.pdb
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.genruntimeconfig.cache
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.csproj.CoreCompileInputs.cache
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.MvcApplicationPartsAssemblyInfo.cs
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.MvcApplicationPartsAssemblyInfo.cache

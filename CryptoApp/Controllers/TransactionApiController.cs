@@ -3,23 +3,25 @@ using CryptoApp.Data.Entities;
 using CryptoApp.Models;
 using CryptoApp.Models.DTO;
 using CryptoApp.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Http;
 
 namespace CryptoApp.Controllers
 {
     [Route("api")]
-    public class TransactionApiController : ApiController
+    [ApiController]
+    public class TransactionApiController : ControllerBase
     {
         #region Constructor
         private readonly ITransactionServices _transactionServices;
         private readonly IPairServices _pairServices;
 
-        public TransactionController(ITransactionServices transactionServices, IPairServices pairServices)
+        public TransactionApiController(ITransactionServices transactionServices, IPairServices pairServices)
         {
             _transactionServices = transactionServices;
             _pairServices = pairServices;
@@ -129,6 +131,8 @@ namespace CryptoApp.Controllers
         // POST: Movies/Create
         [HttpPost]
         [Route("transaction/create")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ApiResultModel<Transaction>> Create([FromBody]Transaction transaction, Guid userId)
         {
             try

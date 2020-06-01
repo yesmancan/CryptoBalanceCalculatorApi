@@ -1,0 +1,9 @@
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\bin\Release\netcoreapp3.1\CryptoApp.Commons.deps.json
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\bin\Release\netcoreapp3.1\CryptoApp.Commons.dll
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\bin\Release\netcoreapp3.1\CryptoApp.Commons.pdb
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\obj\Release\netcoreapp3.1\CryptoApp.Commons.csprojAssemblyReference.cache
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\obj\Release\netcoreapp3.1\CryptoApp.Commons.csproj.CoreCompileInputs.cache
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\obj\Release\netcoreapp3.1\CryptoApp.Commons.AssemblyInfoInputs.cache
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\obj\Release\netcoreapp3.1\CryptoApp.Commons.AssemblyInfo.cs
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\obj\Release\netcoreapp3.1\CryptoApp.Commons.dll
+D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp.Commons\obj\Release\netcoreapp3.1\CryptoApp.Commons.pdb
