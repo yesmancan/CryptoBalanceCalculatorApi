@@ -1,18 +1,12 @@
-version: 2
-jobs:
- build:
-   machine: true
-   steps:
-     - checkout 
+ version: 2.1
 
-     # build image
-     - run: |         
-         docker info
-         docker build -t CryptoApp -f Dockerfile .
-     # deploy the image
-     - run: |         
-         docker login --username=$HEROKU_USERNAME --password=$HEROKU_API_KEY registry.heroku.com
-         docker tag sampleheroku registry.heroku.com/$HEROKU_APP_NAME/web
-         docker push registry.heroku.com/$HEROKU_APP_NAME/web                
-         curl https://cli-assets.heroku.com/install.sh | sh
-         heroku container:release web -a $HEROKU_APP_NAME
+ orbs:
+  win: circleci/windows@2.2.0
+
+ jobs:
+   build:
+     executor: win/default     
+    
+     steps:
+       - checkout
+       - run: dotnet build
