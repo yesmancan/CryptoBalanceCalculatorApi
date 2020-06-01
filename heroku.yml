@@ -1,3 +1,7 @@
 build:
 docker:
+<<<<<<< HEAD
 web: Dockerfile
+=======
+web: Dockerfile
+>>>>>>> a2b605763d75c3079363da7a1f6f47629d22a94b
