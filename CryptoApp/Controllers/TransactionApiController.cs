@@ -3,6 +3,7 @@ using CryptoApp.Data.Entities;
 using CryptoApp.Models;
 using CryptoApp.Models.DTO;
 using CryptoApp.Services;
+using CryptoApp.Services.CurrencyServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -19,15 +20,18 @@ namespace CryptoApp.Controllers
     {
         #region Constructor
         private readonly ITransactionServices _transactionServices;
+        private readonly ICurrencyServices _currencyServices;
         private readonly IPairServices _pairServices;
 
-        public TransactionApiController(ITransactionServices transactionServices, IPairServices pairServices)
+        public TransactionApiController(ITransactionServices transactionServices, IPairServices pairServices, ICurrencyServices currencyServices)
         {
             _transactionServices = transactionServices;
+            _currencyServices = currencyServices;
             _pairServices = pairServices;
         }
         #endregion
 
+        #region transactions
         [Route("transactions")]
         public async Task<ApiResultModel<List<TransactionDTO>>> GetTransactions(Guid userId)
         {
@@ -228,5 +232,11 @@ namespace CryptoApp.Controllers
                 };
             }
         }
+        #endregion
+
+        #region Currencies
+        [Route("currencies")]
+        public async Task<ApiResultModel<List<CurrencyDTO>>> GetAllCurrencies() => await _currencyServices.GetCurrenciesDTOAsync();
+        #endregion
     }
 }

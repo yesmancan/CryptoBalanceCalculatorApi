@@ -54,7 +54,6 @@ namespace CryptoApp.Services
 
             return pairs;
         }
-
         public async Task<Pair> CreatePairsAsync(Pair pair)
         {
             if (await GetPairAsync(pair.Normalized) == null)
@@ -65,6 +64,17 @@ namespace CryptoApp.Services
             }
 
             return pair;
+        }
+
+        public async Task<List<Pair>> GetPairAndMarketAsync()
+        {
+            List<Pair> pairs = await _memoryCache.GetOrCreateAsync<List<Pair>>("AllPairs", async entry =>
+            {
+                entry.SlidingExpiration = TimeSpan.FromDays(30);
+                return (List<Pair>)await _retrieverRepository.GetAsync<Pair>(x => x.Status == (short)Enums.EntityStatus.Active);
+            });
+
+            return pairs;
         }
     }
 }

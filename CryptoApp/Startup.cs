@@ -10,7 +10,6 @@ using Hangfire;
 using CryptoApp.Services;
 using CryptoApp.Services.CurrencyServices;
 using Microsoft.OpenApi.Models;
-using CryptoApp.Data.Entities;
 
 namespace CryptoApp
 {
@@ -40,6 +39,7 @@ namespace CryptoApp
 
             services.AddTransient<ICurrencyObjectManager, CurrencyObjectManager>();
             services.AddTransient<ICompaniesServices, CompaniesServices>();
+            services.AddTransient<ICurrencyServices, CurrencyServices>();
             services.AddTransient<IPairServices, PairServices>();
 
             #region Hangfire Services
