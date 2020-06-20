@@ -4,14 +4,16 @@ using CryptoApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CryptoApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200620213200_Update-Decimal-Value")]
+    partial class UpdateDecimalValue
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,34 +62,34 @@ namespace CryptoApp.Data.Migrations
                         .HasDefaultValueSql("(newid())");
 
                     b.Property<decimal>("Ask")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Average")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Bid")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("Companies")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Daily")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("DailyPercent")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("High")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Last")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Low")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Open")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Order")
                         .HasColumnType("int");
@@ -102,7 +104,7 @@ namespace CryptoApp.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Volume")
-                        .HasColumnType("decimal(16,8)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 

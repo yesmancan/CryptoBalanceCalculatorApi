@@ -40,34 +40,34 @@ namespace CryptoApp.Data
                 .ValueGeneratedNever();
 
                 entity.Property(e => e.Ask)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.Average)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.Bid)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.Daily)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.DailyPercent)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.High)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.Last)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.Low)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.Open)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
 
                 entity.Property(e => e.Volume)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(16,8)");
             });
             modelBuilder.Entity<Companies>(entity =>
             {
