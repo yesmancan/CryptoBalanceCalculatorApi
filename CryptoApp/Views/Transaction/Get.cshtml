@@ -49,10 +49,10 @@
                     @Html.DisplayFor(modelItem => item.Id)
                 </td>
                 <td>
-                    @markets.FirstOrDefault(x=>x.Id == item.Market).Name
+                    @markets.FirstOrDefault(x=>x.Id == item.Market)?.Name
                 </td>
                 <td>
-                    @pairs.FirstOrDefault(x => x.Id == item.Coin).Normalized
+                    @pairs.FirstOrDefault(x => x.Id == item.Coin)?.Normalized
                 </td>
                 <td>
                     @item.Unit.ToString("#,##0.00000000")

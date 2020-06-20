@@ -45,6 +45,9 @@ namespace CryptoApp.Controllers
                 {
                     var _coin = pairs.FirstOrDefault(x => x.Id == transaction.Coin);
                     var _market = markets.FirstOrDefault(x => x.Id == transaction.Market);
+                    if (_coin == null || _market == null)
+                        continue;
+
                     returnData.Add(new TransactionDTO()
                     {
                         Id = transaction.Id,
@@ -137,7 +140,7 @@ namespace CryptoApp.Controllers
         [Route("transaction/create")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ApiResultModel<Transaction>> Create([FromBody]Transaction transaction, Guid userId)
+        public async Task<ApiResultModel<Transaction>> Create([FromBody] Transaction transaction, Guid userId)
         {
             try
             {
