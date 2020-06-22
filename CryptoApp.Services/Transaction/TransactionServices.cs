@@ -107,7 +107,7 @@ namespace CryptoApp.Services
             {
                 Currency currency = await _retrieverRepository.GetFirstAsync<Currency>(x => x.Companies == transaction.Market && x.Pairs == transaction.Coin);
                 if (currency == null)
-                    return new UserTransactionOverview();
+                    continue;
 
                 if (transaction.IsSold)
                     overview.NewPrice += transaction.SellPrice * transaction.Unit;
