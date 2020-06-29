@@ -16,5 +16,7 @@ namespace CryptoApp.Services
         Task<IEnumerable<Currency>> GetCoinsByMarket(Guid companyId);
         Task<List<Companies>> GetMarkets();
         Task<UserTransactionOverview> TransactionCalculate(Guid userId);
+        Task Update(Guid id, Transaction item);
+        Task<Transaction> Archive(Guid id);
     }
 }

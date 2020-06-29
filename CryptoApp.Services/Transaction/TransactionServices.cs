@@ -79,12 +79,26 @@ namespace CryptoApp.Services
         {
             var item = await GetAsync(id);
             if (item == null)
-            {
                 throw new ArgumentException("Item not found");
-            }
 
-            _context.Remove<Transaction>(item);
-            _context.Entry<Transaction>(item).State = EntityState.Deleted;
+            item.Status = (int)Enums.EntityStatus.Delete;
+
+            _context.Update<Transaction>(item);
+            _context.Entry<Transaction>(item).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return item;
+        }
+        public async Task<Transaction> Archive(Guid id)
+        {
+            var item = await GetAsync(id);
+            if (item == null)
+                throw new ArgumentException("Item not found");
+
+            item.Status = (int)Enums.EntityStatus.Passive;
+
+            _context.Update<Transaction>(item);
+            _context.Entry<Transaction>(item).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
             return item;
@@ -116,16 +130,31 @@ namespace CryptoApp.Services
 
                 overview.OldPrice += transaction.BuyingPrice * transaction.Unit;
 
-                overview.CoinByCoin.Add(new CoinByCoinOverview()
-                {
-                    Coin = pairs.FirstOrDefault(x => x.Id == transaction.Coin),
-                    Market = companies.FirstOrDefault(x => x.Id == transaction.Market),
-                    NewPrice = currency.Last * transaction.Unit,
-                    OldPrice = transaction.BuyingPrice * transaction.Unit,
-                    Profit = (transaction.BuyingPrice * transaction.Unit) - (currency.Last * transaction.Unit),
-                    ProfitRatio = (transaction.BuyingPrice * transaction.Unit) % (currency.Last * transaction.Unit)
-                });
+                var _pair = pairs.FirstOrDefault(x => x.Id == transaction.Coin);
+                var _companies = companies.FirstOrDefault(x => x.Id == transaction.Market);
 
+                var _overviewCoin = overview.CoinByCoin.FirstOrDefault(x => x.Coin == _pair && x.Market == _companies);
+                if (_overviewCoin != null)
+                {
+                    _overviewCoin.NewPrice += currency.Last * transaction.Unit;
+                    _overviewCoin.OldPrice += transaction.BuyingPrice * transaction.Unit;
+                    _overviewCoin.Profit += (transaction.BuyingPrice * transaction.Unit) - (currency.Last * transaction.Unit);
+                    _overviewCoin.ProfitRatio += (transaction.BuyingPrice * transaction.Unit) % (currency.Last * transaction.Unit);
+                    _overviewCoin.Unit += transaction.Unit;
+                }
+                else
+                {
+                    overview.CoinByCoin.Add(new CoinByCoinOverview()
+                    {
+                        Coin = pairs.FirstOrDefault(x => x.Id == transaction.Coin),
+                        Market = companies.FirstOrDefault(x => x.Id == transaction.Market),
+                        NewPrice = currency.Last * transaction.Unit,
+                        OldPrice = transaction.BuyingPrice * transaction.Unit,
+                        Profit = (transaction.BuyingPrice * transaction.Unit) - (currency.Last * transaction.Unit),
+                        ProfitRatio = (transaction.BuyingPrice * transaction.Unit) % (currency.Last * transaction.Unit),
+                        Unit = transaction.Unit
+                    });
+                }
             }
 
             overview.Profit = overview.NewPrice - overview.OldPrice;

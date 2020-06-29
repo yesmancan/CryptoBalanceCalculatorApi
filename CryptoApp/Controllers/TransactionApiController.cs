@@ -135,7 +135,7 @@ namespace CryptoApp.Controllers
                 };
             }
         }
-        // POST: Movies/Create
+
         [HttpPost]
         [Route("transaction/create")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -183,12 +183,96 @@ namespace CryptoApp.Controllers
         }
 
         [HttpPost]
+        [Route("transaction/update")]
+        public async Task<ApiResultModel<Transaction>> Update([FromBody] Transaction transaction, Guid userId)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (transaction.Id == Guid.Empty || transaction.Id == null)
+                    {
+                        return new ApiResultModel<Transaction>()
+                        {
+                            Success = false,
+                            Message = "Id null or not guid",
+                            Code = 404,
+                            Data = null
+                        };
+                    }
+
+                    Transaction _transaction = await _transactionServices.GetAsync(transaction.Id);
+
+                    _transaction.SellPrice = transaction.SellPrice;
+                    _transaction.Unit = transaction.Unit;
+                    _transaction.UpdatedBy = userId.ToString();
+                    _transaction.UpdateDt = DateTime.Now;
+
+                    await _transactionServices.Update(transaction.Id, transaction);
+
+                    return new ApiResultModel<Transaction>()
+                    {
+                        Data = transaction,
+                        Success = true,
+                        Message = "Success",
+                        Code = 200
+                    };
+                }
+
+                return new ApiResultModel<Transaction>()
+                {
+                    Data = transaction,
+                    Success = false,
+                    Message = JsonConvert.SerializeObject(ModelState.Values),
+                    Code = 500
+                };
+            }
+            catch (Exception ex)
+            {
+                return new ApiResultModel<Transaction>()
+                {
+                    Data = new Transaction(),
+                    Success = false,
+                    Message = ex.Message,
+                    Code = ex.HResult
+                };
+            }
+        }
+
+        [HttpPost]
         [Route("transaction/delete/{id:Guid}")]
         public async Task<ApiResultModel<dynamic>> Delete(Guid id)
         {
             try
             {
                 await _transactionServices.Delete(id);
+
+                return new ApiResultModel<dynamic>()
+                {
+                    Data = 1,
+                    Success = true,
+                    Message = "Success",
+                    Code = 200
+                };
+            }
+            catch (Exception ex)
+            {
+                return new ApiResultModel<dynamic>()
+                {
+                    Data = -1,
+                    Success = false,
+                    Message = ex.Message,
+                    Code = ex.HResult
+                };
+            }
+        }
+        [HttpPost]
+        [Route("transaction/archive/{id:Guid}")]
+        public async Task<ApiResultModel<dynamic>> Archive(Guid id)
+        {
+            try
+            {
+                await _transactionServices.Archive(id);
 
                 return new ApiResultModel<dynamic>()
                 {

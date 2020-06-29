@@ -23,5 +23,6 @@ namespace CryptoApp.Models.DTO
         public decimal NewPrice { get; set; }
         public decimal Profit { get; set; }
         public decimal ProfitRatio { get; set; }
+        public decimal Unit { get; set; }
     }
 }
