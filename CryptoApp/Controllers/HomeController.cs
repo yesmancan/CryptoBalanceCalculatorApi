@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CryptoApp.Models;
 using CryptoApp.Services;
+using System.Threading.Tasks;
+using StackExchange.Exceptional;
 
 namespace CryptoApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IHangfireServices _hangfireServices;
 
-
-        public HomeController(ILogger<HomeController> logger, IHangfireServices hangfireServices)
+        public HomeController(IHangfireServices hangfireServices)
         {
-            _logger = logger;
             _hangfireServices = hangfireServices;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -41,6 +35,11 @@ namespace CryptoApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task Exceptions()
+        {
+            await ExceptionalMiddleware.HandleRequestAsync(HttpContext).ConfigureAwait(false);
         }
     }
 }

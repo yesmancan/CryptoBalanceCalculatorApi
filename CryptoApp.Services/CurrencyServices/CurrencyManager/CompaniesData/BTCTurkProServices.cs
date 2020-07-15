@@ -72,6 +72,7 @@ namespace CryptoApp.Services.CurrencyServices.CompaniesData
                 }
                 catch (Exception ex)
                 {
+                    throw new NotImplementedException(ex.Message);
                 }
             }
 

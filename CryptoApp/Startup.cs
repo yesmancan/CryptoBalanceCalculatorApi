@@ -9,7 +9,6 @@ using Microsoft.Extensions.Hosting;
 using Hangfire;
 using CryptoApp.Services;
 using CryptoApp.Services.CurrencyServices;
-using Microsoft.OpenApi.Models;
 
 namespace CryptoApp
 {
@@ -53,17 +52,13 @@ namespace CryptoApp
             services.AddTransient<ITransactionServices, TransactionServices>();
 
             services.AddControllersWithViews();
+            services.AddExceptional(Configuration.GetSection("Exceptional"));
+
             services.AddRazorPages();
 
-            services.AddMvc();
+            services.AddMvcCore().AddApiExplorer();
 
             services.AddCors();
-
-            // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -88,8 +83,7 @@ namespace CryptoApp
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
+            app.UseExceptional();
 
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyMethod().AllowAnyOrigin());
 
@@ -100,8 +94,6 @@ namespace CryptoApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-                endpoints.MapDefaultControllerRoute();
 
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
