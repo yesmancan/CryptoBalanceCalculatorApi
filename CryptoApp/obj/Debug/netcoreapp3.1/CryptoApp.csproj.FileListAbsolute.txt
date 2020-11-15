@@ -963,15 +963,6 @@ D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\sta
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.dll
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.pdb
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\obj\Debug\netcoreapp3.1\CryptoApp.genruntimeconfig.cache
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
-D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\Dapper.dll
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\StackExchange.Exceptional.AspNetCore.dll
 D:\Works\WebApp\CryptoBalanceCalculatorApi\CryptoApp\bin\Debug\netcoreapp3.1\StackExchange.Exceptional.Shared.dll

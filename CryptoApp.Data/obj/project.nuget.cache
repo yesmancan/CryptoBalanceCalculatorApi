@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Q9NvKoLOI9wzeI2iW2LvF/87MjuwB8CYyHQPx/nMbbbNNJO4AfJffLKRkUgR37zNYDQLuP+QW0R7wYFGdftXSg==",
+  "dgSpecHash": "qrxhZWXrLRg+FPVf3rYGb+ubfv9ZFfwZk1fN1BF89wKNlerD2UyfvJDS9Mp+/BERpWa4+vNTX16aCNtlE8EFDg==",
   "success": true,
   "projectFilePath": "D:\\Works\\WebApp\\CryptoBalanceCalculatorApi\\CryptoApp.Data\\CryptoApp.Data.csproj",
   "expectedPackageFiles": [
@@ -95,7 +95,8 @@
     "C:\\Users\\yesma\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\yesma\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\yesma\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\yesma\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\yesma\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\yesma\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }
